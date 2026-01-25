@@ -7,6 +7,9 @@ import authRoutes from "./routes/authRoutes.js";
 import { requireAuth } from "./middleware/requireAuth.js";
 import workoutRoutes from "./routes/workoutRoutes.js";
 import volumeRoutes from "./routes/volumeRoutes.js";
+import dietRoutes from "./routes/dietRoutes.js";
+import sleepRoutes from "./routes/sleepRoutes.js";
+import recoveryRoutes from "./routes/recoveryRoutes.js";
 
 
 dotenv.config();
@@ -17,6 +20,12 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/workouts", workoutRoutes);
 app.use("/api/volume", volumeRoutes);
+app.use("/api/diet", dietRoutes);
+app.use("/api/sleep", sleepRoutes);
+app.use("/api/recovery", recoveryRoutes);
+
+
+
 
 app.get("/me", requireAuth, (req, res) => {
   res.json({ userId: req.userId });
