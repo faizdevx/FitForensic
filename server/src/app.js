@@ -5,12 +5,14 @@ import cors from "cors";
 import User from "./models/User.js";
 import authRoutes from "./routes/authRoutes.js";
 import { requireAuth } from "./middleware/requireAuth.js";
+import workoutRoutes from "./routes/workoutRoutes.js";
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
+app.use("/api/workouts", workoutRoutes);
 
 app.get("/me", requireAuth, (req, res) => {
   res.json({ userId: req.userId });
