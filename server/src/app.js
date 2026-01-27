@@ -10,7 +10,7 @@ import volumeRoutes from "./routes/volumeRoutes.js";
 import dietRoutes from "./routes/dietRoutes.js";
 import sleepRoutes from "./routes/sleepRoutes.js";
 import recoveryRoutes from "./routes/recoveryRoutes.js";
-
+import userRoutes from "./routes/user.routes.js";
 
 dotenv.config();
 
@@ -23,6 +23,7 @@ app.use("/api/volume", volumeRoutes);
 app.use("/api/diet", dietRoutes);
 app.use("/api/sleep", sleepRoutes);
 app.use("/api/recovery", recoveryRoutes);
+app.use("/api/users", userRoutes);
 
 
 
